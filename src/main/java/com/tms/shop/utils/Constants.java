@@ -1,6 +1,7 @@
 package com.tms.shop.utils;
 
 public class Constants {
+
     public static final String PROFILE_PAGE = "profile";
     public static final String HOME_PAGE = "home";
     public static final String CART_PAGE = "cart";
