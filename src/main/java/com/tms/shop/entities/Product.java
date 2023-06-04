@@ -27,8 +27,11 @@ public class Product extends BaseEntity implements Serializable {
 
     @Column(name = "image_path")
     private String imageName;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "price")
     private BigDecimal price;
     @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", nullable = false)

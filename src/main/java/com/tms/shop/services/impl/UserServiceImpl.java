@@ -1,8 +1,6 @@
 package com.tms.shop.services.impl;
 
 
-
-
 import static com.tms.shop.utils.Constants.HOME_PAGE;
 
 import com.tms.shop.entities.Category;

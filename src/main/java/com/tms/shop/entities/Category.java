@@ -22,6 +22,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "categories")
 public class Category extends BaseEntity implements Serializable {
 
+    @Column(name = "name")
     private String name;
     @Column(name = "imagename")
     private String imageName;
