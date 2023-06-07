@@ -1,6 +1,5 @@
 package com.tms.shop.services.impl;
 
-
 import static com.tms.shop.utils.Constants.HOME_PAGE;
 
 import com.tms.shop.entities.Category;
@@ -19,7 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-
     private final UserRepository userRepository;
     private final CategoryService categoryService;
 

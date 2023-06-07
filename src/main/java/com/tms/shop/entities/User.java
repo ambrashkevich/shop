@@ -3,6 +3,9 @@ package com.tms.shop.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -13,21 +16,22 @@ import java.math.BigDecimal;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
-@RequiredArgsConstructor
 @SuperBuilder
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity implements Serializable {
+public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")

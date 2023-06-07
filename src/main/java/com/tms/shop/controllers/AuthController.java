@@ -29,7 +29,6 @@ public class AuthController {
         return new ModelAndView(SIGN_IN_PAGE);
     }
 
-    // @ErrorView(value = "error", status = HttpStatus.FORBIDDEN)
     @PostMapping
     public ModelAndView login(@ModelAttribute("user") @Valid User user, BindingResult bindingResult, ModelAndView modelAndView) throws AuthorizationException {
         if (bindingResult.hasErrors()) {
