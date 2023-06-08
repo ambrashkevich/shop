@@ -13,17 +13,14 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+
 
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
-@RequiredArgsConstructor
-@SuperBuilder
+@NoArgsConstructor
 @Entity
 @Table(name = "products")
 public class Product implements Serializable {

@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS categories;
 create table categories
 (
-    id        serial primary key,
+    id       serial primary key,
     name      varchar(50)  not null,
     imageName varchar(100) not null
 );
@@ -36,9 +36,7 @@ create table if not exists users
     name     varchar(45)    not null,
     surname  varchar(45)    not null,
     email    varchar(200)   not null,
-    password varchar(50)    not null,
-    birthday date           not null,
-    balance  numeric(15, 2) not null
+    password varchar(50)    not null
 );
 alter table users
     owner to postgres;
@@ -76,7 +74,7 @@ create table if not exists products
 (
     id          serial primary key,
     name        varchar(200) not null,
-    description varchar(300) null,
+    description varchar(320) null,
     price       int          not null,
     image_path  varchar(300) null,
     category_id int          not null
@@ -118,11 +116,11 @@ INSERT INTO products (id, name, description, price, image_path, category_id)
 VALUES (2, 'Samsung Galaxy M53 5G', 'Android 12, Super AMOLED Plus 120 Гц, 6,7 дюйма, 1080 х 2408, 20:9, MediaTek MT6877 Dimensity 900, ОЗУ 8 ГБ, память 128 ГБ, камера 12 Мп, 1 SIM (nano-SIM/eSIM), влагозащита IP68', 1100, 'galaxym53.jpg', 1);
 INSERT INTO products (id, name, description, price, image_path, category_id)
 VALUES (3, 'Macbook Air 13',
-        'Операционная система: Mac OS,размер экрана: 13.3 дюйма, разрешение экрана: 2560x1600,матрица: IPS, соотношение сторон: 16:10, частота экрана: 60 гц, процессор: M1, кол-во ядер: 8, частота процессора: 3200 МГц, графический адаптер: Apple M1 GPU, оперативная память: 8 гб,ёмкость SSD: 256 гб',
+        'Операционная система: MacOS, разрешение экрана: 2560x1600,матрица: IPS, соотношение сторон: 16:10, частота экрана: 60 гц, процессор: M1, кол-во ядер: 8, частота процессора: 3200 МГц, графический адаптер: Apple M1 GPU, оперативная память: 8 гб,ёмкость SSD: 256 гб',
         1100, 'macbook.jpeg', 2);
 INSERT INTO products (id, name, description, price, image_path, category_id)
 VALUES (4, 'ASUS FX503',
-        'Операционная система: Windows,размер экрана: 15.6 дюйма, разрешение экрана: 1920x1080,матрица: IPS, соотношение сторон: 16:9, частота экрана: 60 гц, процессор: intel core i5 6500, кол-во ядер: 4, частота: 3500 МГц, графический адаптер: GeForce GTX 1050, оперативная память: 16 гб,ёмкость SSD: 512 гб',
+        'Операционная система: Windows, разрешение экрана: 1920x1080,матрица: IPS, соотношение сторон: 16:9, частота экрана: 60 гц, процессор: intel core i5 6500, кол-во ядер: 4, частота: 3500 МГц, графический адаптер: GTX 1050, оперативная память: 16 гб,ёмкость SSD: 512 гб',
         1100, 'asus.jpeg', 2);
 INSERT INTO products (id, name, description, price, image_path, category_id)
 VALUES (5, 'NAVITEL E777 Truck', 'Операционная система: Linux, процессор: MStar MSB2531, оперативная память: 128 мб,размер экрана:7 дюймов,разрешение экрана: 800 х 480,встроенная память: 8 гб', 1100, 'navitel.jpeg', 3);
@@ -147,7 +145,7 @@ VALUES (12, 'Panasonic HC-V770',
         'Разрешение видеосъёмки: Full HD, матрица: BSI MOS, формат сжатия видео: AVCHD, MPEG-4 (MP4), количество точек матрицы: 12.76 Мп, электронная стабилизация: оптическая, количество пикселей при фотосъемке: 24 Мп, разрешение фотоснимка:6528x3672, емкость аккумулятора: 1940 мАч', 1100,
         'panasonic.jpg', 6);
 
-INSERT INTO users (name, surname, email, password, birthday, balance)
-VALUES ('Vadim', 'Vadimovich', 'vadim@mail.ru', '123123', '22.05.2001', 10000.20),
-       ('Max', 'Ivanov', 'max@bk.ru', 'admin123', '01.02.1999', 32500.00),
-       ('Anton', 'Antonov','anton@list.ru', '11111111', '04.01.2000', 17509);
+INSERT INTO users (name, surname, email, password)
+VALUES ('Vadim', 'Vadimovich', 'vadim@mail.ru', '123123'),
+       ('Max', 'Ivanov', 'max@bk.ru', 'admin123'),
+       ('Anton', 'Antonov','anton@list.ru', '11111111');

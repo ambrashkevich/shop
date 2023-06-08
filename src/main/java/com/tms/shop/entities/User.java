@@ -19,6 +19,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -45,10 +46,6 @@ public class User implements Serializable {
     @Email(message = "Email must be valid")
     @Column(name = "email")
     private String email;
-    @Column(name = "birthday")
-    private Date birthday;
-    @Column(name = "balance")
-    private BigDecimal balance;
 
     public User(String email, String password) {
         this.email = email;
