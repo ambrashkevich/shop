@@ -26,7 +26,6 @@
   </div>
 </div>
 <form th:method="POST" th:action="@{/cart/add(product_id=${product.getId()}, name=${product.getName()})}" th:object="${person}">
-  <!--<a th:href="@{/cart/add(product_id=${product.getId()}, name=${product.getName()})}">-->
   <button id="addProductToCart" type="submit" onclick="productAddedToShoppingCartMsg()">Купить</button>
 </form>
 <a th:href="@{/cart/open}">
