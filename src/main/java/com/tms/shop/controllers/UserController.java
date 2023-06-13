@@ -29,7 +29,7 @@ public class UserController {
         User existingUser = userRepository.findByEmail(email);
         if (existingUser != null) {
             model.addAttribute("error", "Email already exists");
-            return "registration-form";
+            return "register";
         }
 
         userRepository.save(user);

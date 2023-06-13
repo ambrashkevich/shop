@@ -25,11 +25,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 @Table(name = "orders")
-public class Order implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Order extends BaseEntity implements Serializable {
     @Column(name = "PRICE")
     private int price;
     @Column(name = "DATE")

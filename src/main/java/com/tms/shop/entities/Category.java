@@ -23,11 +23,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Entity
 @Table(name = "categories")
-public class Category implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Category extends BaseEntity implements Serializable {
     @Column(name = "name")
     private String name;
     @Column(name = "imagename")
