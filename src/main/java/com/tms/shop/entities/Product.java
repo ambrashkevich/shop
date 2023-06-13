@@ -13,21 +13,25 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 @AllArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
+@ToString
+@RequiredArgsConstructor
+@SuperBuilder
 @Entity
 @Table(name = "products")
-public class Product implements Serializable {
 
+public class Product extends BaseEntity implements Serializable {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
+    private Integer id;
     @Column(name = "image_path")
     private String imageName;
     @Column(name = "name")

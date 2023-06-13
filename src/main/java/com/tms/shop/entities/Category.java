@@ -27,7 +27,7 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer id;
+    private Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "imagename")
